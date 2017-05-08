@@ -22,6 +22,11 @@ class User extends Authenticatable
         $this->attributes['name'] = strtolower($valor);
     }
 
+    public function getNameAttribute($valor)
+    {
+        return ucfirst($valor);
+    }
+
     public function setEmailAttribute($valor)
     {
         $this->attributes['email'] = strtolower($valor);
