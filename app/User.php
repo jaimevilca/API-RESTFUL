@@ -17,6 +17,16 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    public function setNameAttribute($valor)
+    {
+        $this->attributes['name'] = strtolower($valor);
+    }
+
+    public function setEmailAttribute($valor)
+    {
+        $this->attributes['email'] = strtolower($valor);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
